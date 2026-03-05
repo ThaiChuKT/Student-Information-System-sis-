@@ -86,9 +86,9 @@ hs_err_pid*
 # ===================================
 
 # PDF and DOC files (exclude documentation if needed)
-# *.pdf
-# *.doc
-# *.docx
+*.pdf
+*.doc
+*.docx
 
 # Backup files
 *.bak
