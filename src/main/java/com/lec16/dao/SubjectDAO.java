@@ -7,14 +7,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * DAO class for Subject operations
- */
 public class SubjectDAO {
 
-    /**
-     * Get all subjects
-     */
     public List<Subject> getAllSubjects() {
         List<Subject> subjects = new ArrayList<>();
         String sql = "SELECT * FROM subject_t ORDER BY subject_id";
@@ -39,9 +33,6 @@ public class SubjectDAO {
         return subjects;
     }
 
-    /**
-     * Get subject by ID
-     */
     public Subject getSubjectById(int subjectId) {
         String sql = "SELECT * FROM subject_t WHERE subject_id = ?";
         
@@ -67,9 +58,6 @@ public class SubjectDAO {
         return null;
     }
 
-    /**
-     * Insert a new subject
-     */
     public boolean insertSubject(Subject subject) {
         String sql = "INSERT INTO subject_t (subject_code, subject_name, credit) VALUES (?, ?, ?)";
         
@@ -89,9 +77,6 @@ public class SubjectDAO {
         }
     }
 
-    /**
-     * Update subject
-     */
     public boolean updateSubject(Subject subject) {
         String sql = "UPDATE subject_t SET subject_code = ?, subject_name = ?, credit = ? WHERE subject_id = ?";
         
@@ -112,9 +97,6 @@ public class SubjectDAO {
         }
     }
 
-    /**
-     * Delete subject
-     */
     public boolean deleteSubject(int subjectId) {
         String sql = "DELETE FROM subject_t WHERE subject_id = ?";
         

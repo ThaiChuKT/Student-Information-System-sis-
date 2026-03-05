@@ -1,8 +1,5 @@
 package com.lec16.entity;
 
-/**
- * Entity class representing a student
- */
 public class Student {
     private int studentId;
     private String studentCode;
@@ -25,7 +22,6 @@ public class Student {
         this.address = address;
     }
 
-    // Getters and Setters
     public int getStudentId() {
         return studentId;
     }

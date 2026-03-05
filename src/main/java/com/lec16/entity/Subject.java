@@ -1,8 +1,5 @@
 package com.lec16.entity;
 
-/**
- * Entity class representing a subject
- */
 public class Subject {
     private int subjectId;
     private String subjectCode;
@@ -25,7 +22,6 @@ public class Subject {
         this.credit = credit;
     }
 
-    // Getters and Setters
     public int getSubjectId() {
         return subjectId;
     }

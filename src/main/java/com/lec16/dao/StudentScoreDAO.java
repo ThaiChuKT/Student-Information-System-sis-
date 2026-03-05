@@ -7,14 +7,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * DAO class for StudentScore operations
- */
 public class StudentScoreDAO {
 
-    /**
-     * Insert a new student score
-     */
     public boolean insertStudentScore(StudentScore score) {
         String sql = "INSERT INTO student_score_t (student_id, subject_id, score1, score2) VALUES (?, ?, ?, ?)";
         
@@ -35,9 +29,6 @@ public class StudentScoreDAO {
         }
     }
 
-    /**
-     * Get all student scores with full details
-     */
     public List<StudentScore> getAllStudentScores() {
         List<StudentScore> scores = new ArrayList<>();
         String sql = "SELECT ss.*, st.student_code, st.full_name, " +
@@ -73,9 +64,6 @@ public class StudentScoreDAO {
         return scores;
     }
 
-    /**
-     * Get scores by student ID
-     */
     public List<StudentScore> getScoresByStudentId(int studentId) {
         List<StudentScore> scores = new ArrayList<>();
         String sql = "SELECT ss.*, st.student_code, st.full_name, " +
@@ -114,9 +102,6 @@ public class StudentScoreDAO {
         return scores;
     }
 
-    /**
-     * Get score by ID
-     */
     public StudentScore getScoreById(int scoreId) {
         String sql = "SELECT ss.*, st.student_code, st.full_name, " +
                      "sub.subject_code, sub.subject_name, sub.credit " +
@@ -153,9 +138,6 @@ public class StudentScoreDAO {
         return null;
     }
 
-    /**
-     * Update student score
-     */
     public boolean updateStudentScore(StudentScore score) {
         String sql = "UPDATE student_score_t SET student_id = ?, subject_id = ?, score1 = ?, score2 = ? " +
                      "WHERE student_score_id = ?";
@@ -178,9 +160,6 @@ public class StudentScoreDAO {
         }
     }
 
-    /**
-     * Delete student score
-     */
     public boolean deleteStudentScore(int scoreId) {
         String sql = "DELETE FROM student_score_t WHERE student_score_id = ?";
         
@@ -197,9 +176,6 @@ public class StudentScoreDAO {
         }
     }
 
-    /**
-     * Check if score exists for student and subject
-     */
     public boolean isScoreExists(int studentId, int subjectId) {
         String sql = "SELECT COUNT(*) FROM student_score_t WHERE student_id = ? AND subject_id = ?";
         

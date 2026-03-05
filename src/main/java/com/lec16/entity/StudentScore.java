@@ -1,8 +1,5 @@
 package com.lec16.entity;
 
-/**
- * Entity class representing a student's score in a subject
- */
 public class StudentScore {
     private int studentScoreId;
     private int studentId;
@@ -10,7 +7,6 @@ public class StudentScore {
     private double score1;
     private double score2;
     
-    // Additional fields for display purposes
     private String studentCode;
     private String studentName;
     private String subjectCode;
@@ -35,14 +31,10 @@ public class StudentScore {
         this.score2 = score2;
     }
 
-    /**
-     * Calculate final grade based on the formula: Grade = 0.3*score1 + 0.7*score2
-     */
     public double calculateGrade() {
         return 0.3 * score1 + 0.7 * score2;
     }
 
-    // Getters and Setters
     public int getStudentScoreId() {
         return studentScoreId;
     }

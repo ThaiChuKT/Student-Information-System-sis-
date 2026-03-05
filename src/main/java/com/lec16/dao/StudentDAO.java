@@ -7,14 +7,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * DAO class for Student operations
- */
 public class StudentDAO {
 
-    /**
-     * Insert a new student
-     */
     public boolean insertStudent(Student student) {
         String sql = "INSERT INTO student_t (student_code, full_name, address) VALUES (?, ?, ?)";
         
@@ -34,9 +28,6 @@ public class StudentDAO {
         }
     }
 
-    /**
-     * Get all students
-     */
     public List<Student> getAllStudents() {
         List<Student> students = new ArrayList<>();
         String sql = "SELECT * FROM student_t ORDER BY student_id";
@@ -61,9 +52,6 @@ public class StudentDAO {
         return students;
     }
 
-    /**
-     * Get student by ID
-     */
     public Student getStudentById(int studentId) {
         String sql = "SELECT * FROM student_t WHERE student_id = ?";
         
@@ -89,9 +77,6 @@ public class StudentDAO {
         return null;
     }
 
-    /**
-     * Update student
-     */
     public boolean updateStudent(Student student) {
         String sql = "UPDATE student_t SET student_code = ?, full_name = ?, address = ? WHERE student_id = ?";
         
@@ -112,9 +97,6 @@ public class StudentDAO {
         }
     }
 
-    /**
-     * Delete student
-     */
     public boolean deleteStudent(int studentId) {
         String sql = "DELETE FROM student_t WHERE student_id = ?";
         
@@ -131,9 +113,6 @@ public class StudentDAO {
         }
     }
 
-    /**
-     * Check if student code exists
-     */
     public boolean isStudentCodeExists(String studentCode) {
         String sql = "SELECT COUNT(*) FROM student_t WHERE student_code = ?";
         

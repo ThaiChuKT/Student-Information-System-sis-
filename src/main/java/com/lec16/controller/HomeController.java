@@ -12,9 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Main controller for displaying student information
- */
 @WebServlet("/")
 public class HomeController extends HttpServlet {
     private StudentScoreDAO scoreDAO;
@@ -28,14 +25,11 @@ public class HomeController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        // Get all student scores
         List<StudentScore> scores = scoreDAO.getAllStudentScores();
         
-        // Set attributes for JSP
         request.setAttribute("scores", scores);
         request.setAttribute("gradeConverter", new GradeConverter());
         
-        // Forward to index page
         request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 }

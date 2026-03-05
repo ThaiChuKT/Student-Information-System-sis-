@@ -12,9 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Servlet for handling student score operations
- */
 @WebServlet("/score")
 public class ScoreController extends HttpServlet {
     private StudentScoreDAO scoreDAO;
@@ -58,18 +55,12 @@ public class ScoreController extends HttpServlet {
         }
     }
 
-    /**
-     * List all scores
-     */
     private void listScores(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setAttribute("scores", scoreDAO.getAllStudentScores());
         request.getRequestDispatcher("/score-list.jsp").forward(request, response);
     }
 
-    /**
-     * Show add score form
-     */
     private void showAddForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setAttribute("students", studentDAO.getAllStudents());
@@ -77,9 +68,6 @@ public class ScoreController extends HttpServlet {
         request.getRequestDispatcher("/score-form.jsp").forward(request, response);
     }
 
-    /**
-     * Insert a new score
-     */
     private void insertScore(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {

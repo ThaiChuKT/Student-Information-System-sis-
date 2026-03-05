@@ -10,9 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Servlet for handling student operations
- */
 @WebServlet("/student")
 public class StudentController extends HttpServlet {
     private StudentDAO studentDAO;
@@ -52,26 +49,17 @@ public class StudentController extends HttpServlet {
         }
     }
 
-    /**
-     * List all students
-     */
     private void listStudents(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setAttribute("students", studentDAO.getAllStudents());
         request.getRequestDispatcher("/student-list.jsp").forward(request, response);
     }
 
-    /**
-     * Show add student form
-     */
     private void showAddForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("/student-form.jsp").forward(request, response);
     }
 
-    /**
-     * Insert a new student
-     */
     private void insertStudent(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
